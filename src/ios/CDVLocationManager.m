@@ -44,6 +44,8 @@
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     
+    // displays the blue bar "/yourApp/ is using your location" when app is in background
+    [self.locationManager startUpdatingLocation];
     
     if (IsAtLeastiOSVersion(@"9.0")) {
         self.locationManager.allowsBackgroundLocationUpdates = YES;
